@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="employee"
+            type="forthedream.databindingdemo.Employee"/>
+
+        <variable
+            name="presenter"
+            type="forthedream.databindingdemo.SimpleActivity.Presenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ViewStub
+            android:id="@+id/view_stub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/view_stub"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入 First Name"
+            android:onTextChanged="@{presenter.onTextChanged}"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{employee.fired ? View.GONE : View.VISIBLE}"
+            android:hint="输入 Last Name"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{presenter.onClick}"
+            android:text="@{employee.firstName}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{() -> presenter.onClickListenerBinding(employee)}"
+            android:text="@{employee.lastName}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{String.valueOf(1 + 2)}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{employee.user["hello1"]}'/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{employee.user["hello2"]}'/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{employee.user["hello3"]}'/>
+
+        <include layout="@layout/include_demo"
+                 bind:employee="@{employee}"
+                 bind:presenter="@{presenter}"/>
+    </LinearLayout>
+
+</layout>

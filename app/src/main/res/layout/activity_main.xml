@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="simple"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="list"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_two_way_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="two-way binding"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_lambda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lambda"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_expression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="expression"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="animation"
+        android:onClick="onClick"/>
+</LinearLayout>
+

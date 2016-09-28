@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="employee"
+            type="forthedream.databindingdemo.Employee"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            fresco:placeholderImage="@drawable/smiling_face"
+            app:imageUri = "@{employee.img}"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            fresco:placeholderImage="@drawable/smiling_face"
+            app:imageURI = "@{employee.imgUri}"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            fresco:placeholderImage="@drawable/smiling_face"
+            app:imageURI = "@{employee.img}"
+            />
+    </LinearLayout>
+</layout>
