@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
                 break;
             case R.id.btn_animation:
+                intent = new Intent(MainActivity.this, AnimationActivity.class);
+                startActivity(intent);
                 break;
         }
     }
