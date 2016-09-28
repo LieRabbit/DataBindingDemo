@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DataBindingDemo</string>
     <string name="welcome">welcome%1$s</string>
+    <string name="demo_simple">test</string>
 </resources>

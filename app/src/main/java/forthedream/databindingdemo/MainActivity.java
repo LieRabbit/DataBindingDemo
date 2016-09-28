@@ -1,6 +1,7 @@
 package forthedream.databindingdemo;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,14 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Test.flag)
+        {
+            DataBindingUtil.setDefaultComponent(new ProductionComponent());
+        } else
+        {
+            DataBindingUtil.setDefaultComponent(new TestComponent());
+        }
     }
 
     public void onClick(View v)
@@ -42,6 +51,10 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.btn_animation:
                 intent = new Intent(MainActivity.this, AnimationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_component:
+                intent = new Intent(MainActivity.this, ComponentActivity.class);
                 startActivity(intent);
                 break;
         }

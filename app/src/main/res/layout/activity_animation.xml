@@ -29,7 +29,7 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onCheckedChanged="@{presenter.onCheckedChanged}"
+            android:onCheckedChanged="@{presenter::onCheckedChanged}"
             android:text="显示信息"/>
 
     </LinearLayout>
